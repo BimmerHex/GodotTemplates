@@ -364,4 +364,3 @@ func check_if_in_group() -> void:
 - **RayCast:** Nesnenin bir yüzeyle çarpışıp çarpışmadığını kontrol eder.
 - **Custom Signal:** Kendi sinyallerinizi tanımlayıp tetikleyebilirsiniz. Burada bir eşya toplandığında sinyal tetiklenir.
 - **class_name:** Script'i küresel hale getirir, böylece diğer sahnelerde veya scriptlerde bu sınıfı referans alabilirsiniz. Script'in bir nesne olarak otomatik olarak Godot düzenleyicisinde görünmesini sağlar. Diğer sahnelerden bu sınıfı kolayca oluşturabilir ve kullanabilirsiniz.
-- 
