@@ -175,9 +175,9 @@ func process():
 Bu dosya, 3 boyutlu bir projede oyuncu karakterini kontrol etmek için kullanılan bir Godot GDScript dosyasını içerir. Kapsayıcı bir şablon olup, birçok GDScript özelliği ve Godot iş akışına dair önemli unsurlar içerir.
 
 ```gdscript
-tool
 extends CharacterBody3D
 class_name Player  # Script'e global bir isim verilir, böylece başka yerlerden erişim kolay olur.
+tool
 
 # Oyuncunun can ve eşya toplama sinyali
 signal health_changed(new_health)
@@ -186,15 +186,17 @@ signal item_collected(item_name)  # Oyuncu bir eşya topladığında tetiklenen 
 # Oyuncunun durumlarını takip etmek için kullanılan enum
 enum PlayerState { IDLE, RUNNING, JUMPING, FALLING, ATTACKING }
 
+# Oyuncunun maksimum sağlığı
+const MAX_HEALTH = 100
+
 # Oyuncu hareket hızları
 @export var walk_speed: float = 5.0
 @export var run_speed: float = 10.0
 @export var jump_force: float = 15.0
 @export var gravity: float = -9.8
 
-# Can durumu ve maksimum can
-@export var max_health: int = 100
-var current_health: int = max_health
+# Can durumu
+var current_health: int = MAX_HEALTH
 
 # Oyuncu zıplama durumu
 var is_jumping: bool = false
@@ -314,7 +316,7 @@ func _input(event: InputEvent) -> void:
 
 # Oyuncuya sağlık ekleyen fonksiyon
 func heal(amount: int) -> void:
-    current_health = clamp(current_health + amount, 0, max_health)
+    current_health = clamp(current_health + amount, 0, MAX_HEALTH)
     emit_signal("health_changed", current_health)
 
 # Eşya toplama işlemi
@@ -364,3 +366,17 @@ func check_if_in_group() -> void:
 - **RayCast:** Nesnenin bir yüzeyle çarpışıp çarpışmadığını kontrol eder.
 - **Custom Signal:** Kendi sinyallerinizi tanımlayıp tetikleyebilirsiniz. Burada bir eşya toplandığında sinyal tetiklenir.
 - **class_name:** Script'i küresel hale getirir, böylece diğer sahnelerde veya scriptlerde bu sınıfı referans alabilirsiniz. Script'in bir nesne olarak otomatik olarak Godot düzenleyicisinde görünmesini sağlar. Diğer sahnelerden bu sınıfı kolayca oluşturabilir ve kullanabilirsiniz.
+
+## Önerilen Sıralama
+
+Bu sıralama, kodun okunabilirliğini artırır ve daha düzenli bir yapının oluşturulmasına yardımcı olur. Özellikle geniş ekiplerde çalışan projelerde bu yapı düzenli bir kod tabanı oluşturmayı sağlar.
+
+1. **class_name**: Script'in global adı.
+2. **tool**: Editör modunda çalışmasını sağlar.
+3. **signal**: Sinyallerin tanımı.
+4. **enum**: Sabit değer kümeleri.
+5. **const**: Sabit değer tanımlamaları.
+6. **@export**: Değişkenlerin Godot düzenleyicisinde görünmesini sağlar.
+7. **var**: Normal değişken tanımları.
+8. **@onready**: Sahne yüklendikten sonra node'lara erişim sağlar.
+9. **Fonksiyonlar**: Yerleşik ve özel fonksiyonlar.
