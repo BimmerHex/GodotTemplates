@@ -1,0 +1,255 @@
+# Godot Node Ağacı
+
+## Genel Node Hiyerarşisi
+
+Node
+│
+├── Viewport
+│   ├── Window
+│   │   ├── AcceptDialog
+│   │   │   ├── ConfirmationDialog
+│   │   │   │   └── FileDialog
+│   │   └── Popup
+│   │       ├── PopupMenu
+│   │       └── PopupPanel
+│   └── SubViewport
+│
+├── CanvasItem
+│   ├── Node2D
+│   │   ├── CollisionObject2D
+│   │   │   ├── PhysicsBody2D
+│   │   │       ├── StaticBody2D
+│   │   │       │   └── AnimatableBody2D
+│   │   │       ├── CharacterBody2D
+│   │   │       ├── PhysicalBone2D
+│   │   │       └── RigidBody2D
+│   │   │           └── VehicleBody2D
+│   │   │   └── Area2D
+│   │   ├── AnimatedSprite2D
+│   │   ├── AudioListener2D
+│   │   ├── AudioStreamPlayer2D
+│   │   ├── BackBufferCopy
+│   │   ├── Bone2D
+│   │   ├── CPUParticles2D
+│   │   ├── Camera2D
+│   │   ├── CanvasGroup
+│   │   ├── CanvasModulate
+│   │   ├── CollisionPolygon2D
+│   │   ├── CollisionShape2D
+│   │   ├── Joint2D
+│   │   │   ├── DampedSpringJoint2D
+│   │   │   ├── GrooveJoint2D
+│   │   │   └── PinJoint2D
+│   │   ├── Light2D
+│   │   │   ├── DirectionalLight2D
+│   │   │   └── PointLight2D
+│   │   ├── GPUParticles2D
+│   │   ├── LightOccluder2D
+│   │   ├── Line2D
+│   │   ├── Marker2D
+│   │   ├── MeshInstance2D
+│   │   ├── MultiMeshInstance2D
+│   │   ├── NavigationLink2D
+│   │   ├── NavigationObstacle2D
+│   │   ├── NavigationRegion2D
+│   │   ├── Parallax2D
+│   │   ├── ParallaxLayer
+│   │   ├── Path2D
+│   │   ├── PathFollow2D
+│   │   ├── Polygon2D
+│   │   ├── RayCast2D
+│   │   ├── RemoteTransform2D
+│   │   ├── ShapeCast2D
+│   │   ├── Skeleton2D
+│   │   ├── Sprite2D
+│   │   ├── TileMap
+│   │   ├── TileMapLayer
+│   │   ├── TouchScreenButton
+│   │   ├── VisibleOnScreenNotifier2D
+│   │   │   └── VisibleOnScreenEnabler2D
+│   └── Control
+│       ├── Container
+│       │   ├── AspectRatioContainer
+│       │   ├── BoxContainer
+│       │   │   ├── VBoxContainer
+│       │   │   │   └── ColorPicker
+│       │   │   └── HBoxContainer
+│       │   ├── CenterContainer
+│       │   ├── FlowContainer
+│       │   │   ├── HFlowContainer
+│       │   │   └── VFlowContainer
+│       │   ├── GraphElement
+│       │   │   ├── GraphFrame
+│       │   │   └── GraphNode
+│       │   ├── GridContainer
+│       │   ├── SplitContainer
+│       │   │   ├── HSplitContainer
+│       │   │   └── VSplitContainer
+│       │   ├── MarginContainer
+│       │   ├── PanelContainer
+│       │   ├── ScrollContainer
+│       │   ├── SubViewportContainer
+│       │   └── TabContainer
+│       ├── BaseButton
+│       │   ├── Button
+│       │   │   ├── CheckBox
+│       │   │   ├── CheckButton
+│       │   │   ├── ColorPickerButton
+│       │   │   ├── MenuButton
+│       │   │   └── OptionButton
+│       │   ├── LinkButton
+│       │   └── TextureButton
+│       ├── TextEdit
+│       │   └── CodeEdit
+│       ├── ColorRect
+│       ├── GraphEdit
+│       ├── Range
+│       │   ├── ScrollBar
+│       │   │   ├── HScrollBar
+│       │   │   └── VScrollBar
+│       │   └── Slider
+│       │   │   ├── HSlider
+│       │   │   └── VSlider
+│       │   ├── ProgressBar
+│       │   ├── SpinBox
+│       │   └── TextureProgressBar
+│       ├── Separator
+│       │   ├── HSeparator
+│       │   └── VSeparator
+│       ├── ItemList
+│       ├── Label
+│       ├── LineEdit
+│       ├── MenuBar
+│       ├── NinePatchRect
+│       ├── Panel
+│       ├── ReferenceRect
+│       ├── RichTextLabel
+│       ├── TabBar
+│       ├── TextureRect
+│       ├── Tree
+│       └── VideoStreamPlayer
+│
+├── Node3D
+│   ├── CollisionObject3D
+│   │   ├── PhysicsBody3D
+│   │   │   ├── StaticBody3D
+│   │   │   │   └── AnimatableBody3D
+│   │   │   ├── CharacterBody3D
+│   │   │   ├── PhysicalBone3D
+│   │   │   └── RigidBody3D
+│   │   │       └── VehicleBody3D
+│   │   └── Area3D
+│   ├── VisualInstance3D
+│   │   ├── GeometryInstance3D
+│   │   │   ├── SpriteBase3D
+│   │   │   │   ├── AnimatedSprite3D
+│   │   │   │   └── Sprite3D
+│   │   │   ├── CPUParticles3D
+│   │   │   ├── CSGShape3D
+│   │   │   │   ├── CSGPrimitive3D
+│   │   │   │   │   ├── CSGBox3D
+│   │   │   │   │   ├── CSGCylinder3D
+│   │   │   │   │   ├── CSGMesh3D
+│   │   │   │   │   ├── CSGPolygon3D
+│   │   │   │   │   ├── CSGSphere3D
+│   │   │   │   │   └── CSGTorus3D
+│   │   │   │   └── CSGCombiner3D
+│   │   │   ├── GPUParticles3D
+│   │   │   ├── Label3D
+│   │   │   ├── MeshInstance3D
+│   │   │   │   └── SoftBody3D
+│   │   │   └── MultiMeshInstance3D
+│   │   ├── Decal
+│   │   ├── Light3D
+│   │   │   ├── DirectionalLight3D
+│   │   │   ├── OmniLight3D
+│   │   │   └── SpotLight3D
+│   │   ├── FogVolume
+│   │   ├── GPUParticlesAttractor3D
+│   │   │   ├── GPUParticlesAttractorBox3D
+│   │   │   ├── GPUParticlesAttractorSphere3D
+│   │   │   └── GPUParticlesAttractorVectorField3D
+│   │   ├── GPUParticlesCollision3D
+│   │   │   ├── GPUParticlesCollisionBox3D
+│   │   │   ├── GPUParticlesCollisionHeightField3D
+│   │   │   ├── GPUParticlesCollisionSDF3D
+│   │   │   └── GPUParticlesCollisionSphere3D
+│   │   ├── LightmapGI
+│   │   ├── OccluderInstance3D
+│   │   ├── ReflectionProbe
+│   │   ├── RootMotionView
+│   │   ├── VisibleOnScreenNotifier3D
+│   │   │   └── VisibleOnScreenEnabler3D
+│   │   └── VoxelGI
+│   ├── AudioListener3D
+│   ├── AudioStreamPlayer3D
+│   ├── BoneAttachment3D
+│   ├── Camera3D
+│   │   └── XRCamera3D
+│   ├── CollisionPolygon3D
+│   ├── CollisionShape3D
+│   ├── Joint3D
+│   │   ├── ConeTwistJoint3D
+│   │   ├── Generic6DOFJoint3D
+│   │   ├── HingeJoint3D
+│   │   ├── PinJoint3D
+│   │   └── SliderJoint3D
+│   ├── GridMap
+│   ├── ImporterMeshInstance3D
+│   ├── LightmapProbe
+│   ├── Marker3D
+│   ├── NavigationLink3D
+│   ├── NavigationObstacle3D
+│   ├── NavigationRegion3D
+│   ├── OpenXRCompositionLayer
+│   │   ├── OpenXRCompositionLayerCylinder
+│   │   ├── OpenXRCompositionLayerEquirect
+│   │   └── OpenXRCompositionLayerQuad
+│   ├── OpenXRHand
+│   ├── Path3D
+│   ├── PathFollow3D
+│   ├── SkeletonModifier3D
+│   │   ├── PhysicalBoneSimulator3D
+│   │   ├── SkeletonIK3D
+│   │   ├── XRBodyModifier3D
+│   │   └── XRHandModifier3D
+│   ├── RayCast3D
+│   ├── RemoteTransform3D
+│   ├── ShapeCast3D
+│   ├── Skeleton3D
+│   ├── SpringArm3D
+│   ├── VehicleWheel3D
+│   ├── XRNode3D
+│   │   ├── XRAnchor3D
+│   │   ├── XRController3D
+│   │   └── XRFaceModifier3D
+│   └── XROrigin3D
+│
+├── AnimationMixer
+│   ├── AnimationPlayer
+│   └── AnimationTree
+│
+├── AudioStreamPlayer
+│
+├── CanvasLayer
+│   └── ParallaxBackground
+│
+├── HTTPRequest
+│
+├── MultiplayerSpawner
+│
+├── MultiplayerSynchronizer
+│
+├── NavigationAgent2D
+│
+├── NavigationAgent3D
+│
+├── ResourcePreloader
+│
+├── ShaderGlobalsOverride
+│
+├── StatusIndicator
+│
+├── Timer
+│
+└── WorldEnvironment
